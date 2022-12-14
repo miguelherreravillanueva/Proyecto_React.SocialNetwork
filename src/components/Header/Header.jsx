@@ -16,12 +16,16 @@ const onLogout=(e)=>{
 }
     return (
         <nav>
-            <span>Header</span>
             <div>
                 {user ?
+                <>
                     <span>
                         <Link to="/" onClick={onLogout}>Logout</Link>
                     </span>
+                    <span>
+                        <Link to="/profile">Profile</Link>
+                    </span>
+                </>
                     :
                     <>
                         <Link to="/login">Login</Link>
