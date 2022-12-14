@@ -22,8 +22,11 @@ const Register = () => {
                 description: msg,
             })
         }
-        if(isError){
-            notification.error({msg:"Error", description:msg})
+        if (isError) {
+            notification.error({
+                msg: "Error",
+                description: msg
+            })
         }
         dispatch(reset())
     }, [isSuccess, isError, msg])
