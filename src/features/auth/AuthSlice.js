@@ -7,7 +7,7 @@ const initialState={
 
 export const register = createAsyncThunk("auth/register", async(user)=>{
     try {
-       return await authService.register(user)
+     await authService.register(user)
     } catch (error) {
         console.log(user)
     }
