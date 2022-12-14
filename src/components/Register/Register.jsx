@@ -37,6 +37,7 @@ const Register = () => {
 
     return (
         <form onSubmit={onSubmit}>
+            <h3>Sign in</h3>
             <input type="text" name="name" value={name} onChange={onChange} placeholder="Name" />
             <input type="email" name="email" value={email} onChange={onChange} placeholder="Email" />
             <input type="password" name="password" value={password} onChange={onChange} placeholder="Password" />
