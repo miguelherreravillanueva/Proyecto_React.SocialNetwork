@@ -13,16 +13,19 @@ const Register = () => {
     })
     const { name, email, password, password2 } = formData
     const dispatch = useDispatch()
-    const { isSuccess, msg } = useSelector((state) => state.auth)
+    const { isSuccess, msg, isError } = useSelector((state) => state.auth)
 
     useEffect(() => {
         if (isSuccess) {
             notification.success({
-                msg: "Yes!",
+                msg: "Success",
                 description: msg,
             })
         }
-    }, [isSuccess])
+        if(isError){
+            notification.error({msg:"Error", description:msg})
+        }
+    }, [isSuccess, isError, msg])
 
     const onChange = (e) => {
         setFormData((prevState) => ({
