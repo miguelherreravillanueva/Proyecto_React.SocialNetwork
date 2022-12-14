@@ -4,6 +4,9 @@ import authService from "./authService"
 const user = JSON.parse(localStorage.getItem("user"))
 const initialState = {
     user: user ? user : null,
+    isError: false,
+    isSucces: false,
+    msg: ""
 }
 
 export const register = createAsyncThunk("auth/register", async (user) => {
@@ -22,7 +25,7 @@ export const login = createAsyncThunk("auth/login", async (user) => {
     }
 })
 
-export const logout = createAsyncThunk("auth/logout", async()=>{
+export const logout = createAsyncThunk("auth/logout", async () => {
     try {
         return await authService.logout()
     } catch (error) {
@@ -40,8 +43,12 @@ export const authSlice = createSlice({
             .addCase(login.fulfilled, (state, action) => {
                 state.user = action.payload
             })
-            .addCase(logout.fulfilled, (state)=>{
+            .addCase(logout.fulfilled, (state) => {
                 state.user = null
+            })
+            .addCase(register.fulfilled, (state, action) => {
+                state.isSucces = true
+                state.msg = action.payload.msg
             })
     }
 })

@@ -3,6 +3,8 @@ import { useSelector } from 'react-redux'
 
 const Profile = () => {
     const {user} = useSelector((state)=> state.auth)
+  
+
   return (
     <div>
         <h3>My profile</h3>
