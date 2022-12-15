@@ -8,6 +8,7 @@ import Header from './components/Header/Header';
 import Profile from './components/Profile/Profile';
 import PostDetail from './components/PostDetail/PostDetail';
 import Search from './components/Search/Search';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/post/:_id" element={<PostDetail />} />
           <Route path="/search/:postName" element={<Search />} />
         </Routes>
+        <Footer/>
       </BrowserRouter>
 
     </div>
