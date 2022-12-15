@@ -16,6 +16,9 @@ const onLogout=(e)=>{
 }
     return (
         <nav>
+            <span>
+                        <Link to="/">Home</Link>
+                    </span>
             <div>
                 {user ?
                 <>

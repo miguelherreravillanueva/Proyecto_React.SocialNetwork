@@ -1,8 +1,21 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 
 const Post = () => {
+  const { posts } = useSelector((state) => state.posts)
+
+  const post = posts?.map((post) => {
+    return (
+      <div className="post">
+        <p>{post.title}: {post.body}</p>
+      </div>
+    )
+  })
+
   return (
-    <div>Post</div>
+    <div>Post
+      {post}
+    </div>
   )
 }
 
