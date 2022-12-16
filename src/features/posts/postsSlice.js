@@ -5,7 +5,10 @@ import postService from "./postsService"
 const initialState = {
     posts: [],
     isLoading: false,
-    post: {}
+    post: {},
+    isError: false,
+    isSuccess: false,
+    msg: ""
 }
 
 export const getAll = createAsyncThunk("posts/getAll", async () => {
@@ -28,7 +31,7 @@ export const getPostByTitle = createAsyncThunk("posts/getPostByTitle/", async (t
     try {
         return await postService.getPostByTitle(title)
     } catch (error) {
-
+        console.log(error)
     }
 })
 
@@ -36,7 +39,15 @@ export const deletePostById = createAsyncThunk("posts/deletePostById/", async (_
     try {
         return await postService.deletePostById(_id)
     } catch (error) {
+        console.log(error)
+    }
+})
 
+export const createPost =createAsyncThunk("posts/createPost/", async()=>{
+    try {
+        return await postService.createPost()
+    } catch (error) {
+        console.log(error)
     }
 })
 
@@ -45,7 +56,10 @@ export const postsSlice = createSlice({
     initialState,
     reducers: {
         reset: (state) => {
-            state.isLoading = false
+            state.isLoading = false;
+            state.isError = false;
+            state.isSuccess = false;
+            state.msg = "";
         }
     },
     extraReducers: (builder) => {

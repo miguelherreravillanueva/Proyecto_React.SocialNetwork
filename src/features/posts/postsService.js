@@ -28,11 +28,22 @@ const deletePostById = async (_id)=>{
     return res.data
 }
 
+const createPost = async ()=>{
+    const user = JSON.parse(localStorage.getItem("user"))
+    const res = await axios.post(API_URL + "/posts/createPost/", {
+        headers:{
+            authorization: user?.token
+        }
+    })
+    return res.data
+}
+
 const postService = {
     getAll,
     getPostById,
     getPostByTitle,
-    deletePostById
+    deletePostById,
+    createPost
 }
 
 export default postService

@@ -13,7 +13,9 @@ const PostAdmin = () => {
     const post = posts?.map((post) => {
         return (
             <div className="post" key={post._id}>
-                <span>{post.title} </span>
+                <br />
+                <span>{post.title}: </span>
+                <span>{post.body} <br /></span>
                 <button onClick={()=>deletePost(post._id)}>Delete post</button>
             </div>
         )

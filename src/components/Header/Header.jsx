@@ -40,6 +40,9 @@ const Header = () => {
                         <span>
                             <Link to="/profile">Profile</Link>
                         </span>
+                        <span>
+                            <Link to="/addPost">Publish</Link>
+                        </span>
                     </>
                     :
                     <>

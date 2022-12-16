@@ -10,6 +10,7 @@ import PostDetail from './components/PostDetail/PostDetail';
 import Search from './components/Search/Search';
 import Footer from './components/Footer/Footer';
 import Admin from './components/Admin/Admin';
+import AddPost from './components/Posts/AddPost/AddPost';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/addPost" element={<AddPost />} />
           <Route path="/post/:_id" element={<PostDetail />} />
           <Route path="/search/:postName" element={<Search />} />
           <Route path="/admin" element={<Admin />} />
