@@ -4,7 +4,9 @@ import { useSelector } from 'react-redux'
 const Profile = () => {
     const {user} = useSelector((state)=> state.auth)
   
-
+if(!user){
+  return <p>Cargando...</p>
+}
   return (
     <div>
         <h3>My profile</h3>
