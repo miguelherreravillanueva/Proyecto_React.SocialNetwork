@@ -28,9 +28,9 @@ const deletePostById = async (_id)=>{
     return res.data
 }
 
-const createPost = async ()=>{
+const createPost = async (postData)=>{
     const user = JSON.parse(localStorage.getItem("user"))
-    const res = await axios.post(API_URL + "/posts/createPost/", {
+    const res = await axios.post(API_URL + "/posts/createPost/", postData,{
         headers:{
             authorization: user?.token
         }

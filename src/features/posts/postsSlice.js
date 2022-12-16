@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
+import { spread } from "axios"
 import postService from "./postsService"
 
 
@@ -43,9 +44,9 @@ export const deletePostById = createAsyncThunk("posts/deletePostById/", async (_
     }
 })
 
-export const createPost =createAsyncThunk("posts/createPost/", async()=>{
+export const createPost = createAsyncThunk("posts/createPost/", async (postData) => {
     try {
-        return await postService.createPost()
+        return await postService.createPost(postData)
     } catch (error) {
         console.log(error)
     }
@@ -63,22 +64,27 @@ export const postsSlice = createSlice({
         }
     },
     extraReducers: (builder) => {
-        builder.addCase(getAll.fulfilled, (state, action) => {
-            state.posts = action.payload.posts
-        })
-        builder.addCase(getAll.pending, (state) => {
-            state.isLoading = true
-        })
-        builder.addCase(getPostById.fulfilled, (state, action) => {
-            state.post = action.payload.post
-        })
-        builder.addCase(getPostByTitle.fulfilled, (state, action) => {
-            state.posts = action.payload.posts
-        })
-        builder.addCase(deletePostById.fulfilled, (state, action) => {
-            console.log(action.payload)
-            state.posts = state.posts.filter(post => post._id !== action.payload.post._id)
-        })
+        builder
+            .addCase(getAll.fulfilled, (state, action) => {
+                state.posts = action.payload.posts
+            })
+            .addCase(getAll.pending, (state) => {
+                state.isLoading = true
+            })
+            .addCase(getPostById.fulfilled, (state, action) => {
+                state.post = action.payload.post
+            })
+            .addCase(getPostByTitle.fulfilled, (state, action) => {
+                state.posts = action.payload.posts
+            })
+            .addCase(deletePostById.fulfilled, (state, action) => {
+                console.log(action.payload)
+                state.posts = state.posts.filter(post => post._id !== action.payload.post._id)
+            })
+            .addCase(createPost.fulfilled, (state, action) => {
+                state.posts = [action.payload.post, ...state.posts]
+                state.isSuccess = true
+            })
     }
 })
 export const { reset } = postsSlice.actions
