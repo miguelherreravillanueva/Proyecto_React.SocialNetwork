@@ -63,7 +63,7 @@ export const postsSlice = createSlice({
         })
         builder.addCase(deletePostById.fulfilled, (state, action) => {
             console.log(action.payload)
-            state.posts = state.posts.filter(post => post._id !== +action.payload._id)
+            state.posts = state.posts.filter(post => post._id !== action.payload.post._id)
         })
     }
 })
