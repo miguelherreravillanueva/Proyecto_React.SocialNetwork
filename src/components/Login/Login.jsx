@@ -3,6 +3,8 @@ import React, { useEffect } from 'react'
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import "./Login.scss";
+
 
 import { login, reset } from '../../features/auth/authSlice'
 
@@ -48,12 +50,15 @@ const Login = () => {
     }
 
     return (
+        <div className="container-login">
         <form onSubmit={onSubmit}>
             <input type="email" name="email" value={email} onChange={onChange} placeholder="Email" />
 
             <input type="password" name='password' value={password} onChange={onChange} placeholder="Password" />
             <button type='submit'>Login</button>
         </form>
+
+        </div>
     )
 }
 

@@ -1,0 +1,29 @@
+@import "//db.onlinewebfonts.com/c/23255fa3ff7a89589800cea3092f154f?family=NB+International";
+
+@font-face {
+  font-family: newYork;
+}
+
+
+
+$font-text: "NB International";
+$font-text-styled: "newYork";
+
+$color-text: #47311d;
+$color-text-shadow: #cdb8a4;
+
+$color-hover: #f3f0ee;
+$color-shadow: #d2cdc9;
+
+$background-1: white;
+$background-2: #f2ece8;
+$background-3: #f3f0ee;
+
+$background-lemon: rgba(255, 240, 127, 0.5);
+
+$background-orange:  rgba(255, 162, 112, 0.5);
+
+Body {
+  background: $background-1;
+}
+

@@ -1,0 +1,17 @@
+@import "../../App.scss";
+
+
+.navbar{
+    border-bottom: 1px $color-text solid;
+    color: rgb(219, 224, 236);
+    padding: 6px;
+    cursor: pointer;
+    font: 100% $font-text;
+    color: $color-text;
+    display: flex;
+    margin: 2em;
+    width: 90%;
+    justify-content: space-between;
+    align-items: baseline;
+    z-index:99;
+}

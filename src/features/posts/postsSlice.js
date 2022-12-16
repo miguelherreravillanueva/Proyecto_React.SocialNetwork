@@ -53,7 +53,7 @@ export const postsSlice = createSlice({
         })
         builder.addCase(getPostByTitle.fulfilled,
             (state, action)=>{
-                state.posts = action.payload
+                state.posts = action.payload.posts
             })
     }
 })

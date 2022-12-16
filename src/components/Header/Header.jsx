@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import { logout } from '../../features/auth/authSlice'
+import "./Header.scss";
+
 
 const Header = () => {
     const navigate = useNavigate()
@@ -22,12 +24,15 @@ const Header = () => {
         }, 3000)
     }
     return (
-        <nav>
+        <nav className='navbar'>
             <span>
                 <Link to="/">Home</Link>
             </span>
             <div>
                 <input onKeyUp={handleChange} placeholder="Search post" name='text' />
+                <span>
+                <Link to="/admin">Admin</Link>
+            </span>
                 {user ?
                     <>
                         <span>

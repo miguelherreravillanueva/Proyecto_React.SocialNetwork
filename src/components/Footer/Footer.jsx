@@ -1,12 +1,12 @@
 import React from 'react'
-// import "./Footer.scss";
+import "./Footer.scss";
 import { Link } from "react-router-dom";
 
 
 const Footer = () => {
   return (
     <div className="footerFull">
-      
+
 <hr />
       Footer
       <div className="footer">
@@ -30,16 +30,16 @@ const Footer = () => {
               Blog
             </span>
             <span>
-              Join Peppagram Club!
+              Join Gapnet
             </span>
           </div>
           <div className="item">
             <h5>Contact</h5>
             <span>
-              +5h54 600 000 000
+              +55 600 000 000
             </span>
             <span>
-              mailpeppa@peppagram.com
+              gapnet@gapnet.com
             </span>
           </div>
         </div>
