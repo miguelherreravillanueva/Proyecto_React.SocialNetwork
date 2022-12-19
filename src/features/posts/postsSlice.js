@@ -1,5 +1,4 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
-import { spread } from "axios"
 import postService from "./postsService"
 
 
@@ -94,7 +93,18 @@ export const postsSlice = createSlice({
                 state.isSuccess = true
                 state.msg = action.payload.msg
             })
+            .addCase(like.fulfilled, (state, action) => {
+                const posts = state.posts.map((post) => {
+                    console.log(typeof action.payload._id)
+                    if (post._id === action.payload._id) {
+                        post = action.payload
+                    }
+                    return post;
+                });
+                state.posts = posts;
+            });
     }
 })
+
 export const { reset } = postsSlice.actions
 export default postsSlice.reducer
