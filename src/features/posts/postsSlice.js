@@ -52,6 +52,14 @@ export const createPost = createAsyncThunk("posts/createPost/", async (postData)
     }
 })
 
+export const like = createAsyncThunk("products/like", async (_id) => {
+    try {
+        return await postService.like(_id);
+    } catch (error) {
+        console.error(error);
+    }
+});
+
 export const postsSlice = createSlice({
     name: "posts",
     initialState,
@@ -84,6 +92,7 @@ export const postsSlice = createSlice({
             .addCase(createPost.fulfilled, (state, action) => {
                 state.posts = [action.payload.post, ...state.posts]
                 state.isSuccess = true
+                state.msg = action.payload.msg
             })
     }
 })

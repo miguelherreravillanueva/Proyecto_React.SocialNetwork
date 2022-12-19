@@ -9,7 +9,7 @@ const Post = () => {
     return (
       <div className="post" key={post._id}>
         <Link to={"/post/" + post._id}>
-        <p>{post.title}: {post.body}</p>
+        <p>{post.userId.name} {post.title}: {post.body}</p>
         </Link>
       </div>
     )

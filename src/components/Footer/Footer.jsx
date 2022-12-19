@@ -8,7 +8,6 @@ const Footer = () => {
     <div className="footerFull">
 
 <hr />
-      Footer
       <div className="footer">
         <div className="top">
           <div className="item">
@@ -45,7 +44,6 @@ const Footer = () => {
         </div>
         <div className="bottom">
           <div className="left">
-            {/* <img className="logo" src={logo} alt="" /> */}
             <span className="copyright">
               <span>© Copyright {new Date().getFullYear()}</span>
               <span> designed by </span>

@@ -21,7 +21,7 @@ const Posts = () => {
   return (
     <div>
       <h2>
-        Posts
+        Feeds
       </h2>
       <Post />
     </div>
