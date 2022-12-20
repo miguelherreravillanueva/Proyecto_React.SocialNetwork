@@ -67,6 +67,14 @@ export const dislike = createAsyncThunk("products/dislike", async (_id) => {
     }
 });
 
+export const updatePost = createAsyncThunk("products/updatePost", async (_id) => {
+    try {
+        return await postService.updatePost(_id);
+    } catch (error) {
+        console.error(error);
+    }
+});
+
 export const postsSlice = createSlice({
     name: "posts",
     initialState,
@@ -120,6 +128,11 @@ export const postsSlice = createSlice({
                     return post;
                 });
                 state.posts = posts;
+            })
+            .addCase(updatePost.fulfilled, (state, action) => {
+                state.posts = [action.payload.post, ...state.posts]
+                state.isSuccess = true
+                state.msg = action.payload.msg
             })
     }
 })

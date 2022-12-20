@@ -17,7 +17,9 @@ const Post = () => {
         <Link to={"/post/" + post._id}>
           <p>{post.userId.name} {post.title}: {post.body}</p>
         </Link>
+        
         <span className="wish"> {post.likes?.length} </span>
+
         {isAlreadyLiked ? (
           <HeartFilled onClick={() => dispatch(dislike(post._id))} />
         ) : (

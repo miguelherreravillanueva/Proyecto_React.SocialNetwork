@@ -11,13 +11,14 @@ const PostDetail = () => {
   useEffect(() => {
     dispatch(getPostById(_id))
   }, [])
-
+if(!post){
+  return <p>Loading..</p>
+}
 
   return (
     <div>
-      PostDetail
-      {console.log(post)}
-      <p>{post.userId.name}</p>
+      {console.log(post)} 
+      <p>{post.userId?.name}</p>
       <p>{post.title}</p>
       <p>{post.body}</p>
     </div>
