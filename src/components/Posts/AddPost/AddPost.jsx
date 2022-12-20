@@ -13,9 +13,9 @@ const AddPost = () => {
         image:""
     })
     const { title, body, image } = formData
+    const { isSuccess, msg, isError } = useSelector((state) => state.posts)
     const dispatch = useDispatch()
     const navigate = useNavigate()
-    const { isSuccess, msg, isError } = useSelector((state) => state.posts)
 
     useEffect(() => {
         if (isSuccess) {
