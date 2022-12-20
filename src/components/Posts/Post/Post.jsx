@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { HeartOutlined, HeartFilled } from "@ant-design/icons";
-import { like } from '../../../features/posts/postsSlice';
+import { dislike, like } from '../../../features/posts/postsSlice';
 
 const Post = () => {
   const { posts } = useSelector((state) => state.posts)
@@ -19,7 +19,7 @@ const Post = () => {
         </Link>
         <span className="wish"> {post.likes?.length} </span>
         {isAlreadyLiked ? (
-          <HeartFilled onClick={() => console.log("dislike")} />
+          <HeartFilled onClick={() => dispatch(dislike(post._id))} />
         ) : (
           <HeartOutlined onClick={() => dispatch(like(post._id))} />
         )}

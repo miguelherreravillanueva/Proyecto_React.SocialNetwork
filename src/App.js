@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.scss';
-import { BrowserRouter,Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import Home from './components/Home/Home';
@@ -17,9 +17,9 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-      <Header/>
+        <Header />
         <Routes>
-        <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/profile" element={<Profile />} />
@@ -28,9 +28,8 @@ function App() {
           <Route path="/posts/" element={<Posts />} />
           <Route path="/search/:postName" element={<Search />} />
           <Route path="/admin" element={<Admin />} />
-          
         </Routes>
-        <Footer/>
+        <Footer />
       </BrowserRouter>
 
     </div>

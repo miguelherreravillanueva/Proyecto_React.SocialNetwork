@@ -17,6 +17,7 @@ const PostDetail = () => {
     <div>
       PostDetail
       {console.log(post)}
+      <p>{post.userId.name}</p>
       <p>{post.title}</p>
       <p>{post.body}</p>
     </div>
