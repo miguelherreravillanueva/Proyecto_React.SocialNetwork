@@ -13,6 +13,7 @@ import Admin from './components/Admin/Admin';
 import AddPost from './components/Posts/AddPost/AddPost';
 import Posts from './components/Posts/Posts';
 import EditPost from './components/EditPost/EditPost';
+import PrivateZone from './guards/PrivateZone';
 
 function App() {
   return (
@@ -23,11 +24,17 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route
+            path="/profile"
+            element={
+              <PrivateZone>
+                <Profile />
+              </PrivateZone>
+            }
+          />
           <Route path="/addPost" element={<AddPost />} />
           <Route path="/post/:_id" element={<PostDetail />} />
           <Route path="/posts/" element={<Posts />} />
-          
           <Route path="/update/" element={<EditPost />} />
           <Route path="/search/:postName" element={<Search />} />
           <Route path="/admin" element={<Admin />} />
