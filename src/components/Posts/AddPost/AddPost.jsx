@@ -10,7 +10,7 @@ const AddPost = () => {
     const [formData, setFormData] = useState({
         title: "",
         body: "",
-        image:""
+        image: ""
     })
     const { title, body, image } = formData
     const { isSuccess, msg, isError } = useSelector((state) => state.posts)
@@ -52,9 +52,21 @@ const AddPost = () => {
         <div>
             <form onSubmit={onSubmit}>
                 <h4>Say something!</h4>
-                <input type="file" name='file' value={image} onChange={onChange} />
-                <input type="text" name="title" value={title} onChange={onChange} placeholder="Title" />
-                <input type="text" name="body" value={body} onChange={onChange} placeholder="Write something" />
+                <input
+                    type="file"
+                    name='file'
+                    value={image}
+                    onChange={onChange} />
+                <input
+                    type="text"
+                    name="title"
+                    value={title}
+                    onChange={onChange} placeholder="Title" />
+                <input
+                    type="text"
+                    name="body"
+                    value={body}
+                    onChange={onChange} placeholder="Write something" />
                 <button type="submit">Publish</button>
 
             </form>

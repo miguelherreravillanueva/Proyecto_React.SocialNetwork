@@ -43,6 +43,9 @@ const Header = () => {
                         <span>
                             <Link to="/addPost">Publish</Link>
                         </span>
+                        <span>
+                            <Link to="/update">Edit</Link>
+                        </span>
                     </>
                     :
                     <>
