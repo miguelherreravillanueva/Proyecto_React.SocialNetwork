@@ -12,7 +12,6 @@ import Footer from './components/Footer/Footer';
 import Admin from './components/Admin/Admin';
 import AddPost from './components/Posts/AddPost/AddPost';
 import Posts from './components/Posts/Posts';
-import EditPost from './components/EditPost/EditPost';
 import PrivateZone from './guards/PrivateZone';
 import AdminZone from './guards/AdminZone';
 import NotFound from './components/NotFound/NotFound';
@@ -37,8 +36,7 @@ function App() {
           <Route path="/addPost" element={<AddPost />} />
           <Route path="/post/:_id" element={<PostDetail />} />
           <Route path="/posts/" element={<Posts />} />
-          <Route path="/update/" element={<EditPost />} />
-          <Route path="/search/:postName" element={<Search />} />
+                    <Route path="/search/:postName" element={<Search />} />
           <Route path="/admin" element={ <AdminZone><Admin /></AdminZone> }/>
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -67,9 +67,9 @@ export const dislike = createAsyncThunk("products/dislike", async (_id) => {
     }
 });
 
-export const updatePost = createAsyncThunk("products/updatePost", async (_id) => {
+export const updatePost = createAsyncThunk("products/updatePost", async (_id, post) => {
     try {
-        return await postService.updatePost(_id);
+        return await postService.updatePost(_id, post);
     } catch (error) {
         console.error(error);
     }
@@ -130,10 +130,14 @@ export const postsSlice = createSlice({
                 state.posts = posts;
             })
             .addCase(updatePost.fulfilled, (state, action) => {
-                state.posts = [action.payload.post, ...state.posts]
-                state.isSuccess = true
-                state.msg = action.payload.msg
-            })
+                const posts = state.posts.map((post) => {
+                    if (post._id === action.payload.post._id) {
+                        post = action.payload.post;
+                    }
+                    return post;
+                });
+                state.posts = posts;
+            });
     }
 })
 

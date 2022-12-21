@@ -58,9 +58,9 @@ const dislike = async (_id) => {
     return res.data;
 }
 
-const updatePost = async (_id) => {
+const updatePost = async (post) => {
     const user = JSON.parse(localStorage.getItem("user"));
-    const res = await axios.put(API_URL + "/posts/updatePostById/" + _id, {}, {
+    const res = await axios.put(API_URL + "/posts/updatePostById/" + post._id, post, {
         headers: {
             authorization: user?.token,
         },

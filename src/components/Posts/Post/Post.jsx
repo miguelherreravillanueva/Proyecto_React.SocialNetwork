@@ -1,14 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { HeartOutlined, HeartFilled } from "@ant-design/icons";
-import { dislike, like } from '../../../features/posts/postsSlice';
+import { HeartOutlined, HeartFilled, DeleteOutlined, EditOutlined } from "@ant-design/icons";
+import { deletePostById, getPostById, dislike, like } from '../../../features/posts/postsSlice';
+import EditModal from './EditModal/EditModal';
 
 const Post = () => {
   const { posts } = useSelector((state) => state.posts)
   const { user } = useSelector((state) => state.auth);
-
+  const [isModalVisible, setIsModalVisible] = useState(false);
   const dispatch = useDispatch();
+
+  const showModal = (_id) => {
+    dispatch(getPostById(_id));
+    setIsModalVisible(true);
+  };
 
   const post = posts?.map((post) => {
     const isAlreadyLiked = post.likes?.includes(user?.user._id);
@@ -17,14 +23,23 @@ const Post = () => {
         <Link to={"/post/" + post._id}>
           <p>{post.userId.name} {post.title}: {post.body}</p>
         </Link>
-        
-        <span className="wish"> {post.likes?.length} </span>
+               <span className="wish"> {post.likes?.length} </span>
 
         {isAlreadyLiked ? (
           <HeartFilled onClick={() => dispatch(dislike(post._id))} />
         ) : (
           <HeartOutlined onClick={() => dispatch(like(post._id))} />
         )}
+
+        {user.user?._id === post.userId?._id ? (
+          <>
+          <DeleteOutlined onClick={() => dispatch(deletePostById(post._id))} />
+          <EditOutlined onClick={() => showModal(post._id)} />
+          </>
+          
+        ) : ("")
+      }
+
       </div>
     )
   })
@@ -32,6 +47,7 @@ const Post = () => {
   return (
     <div>
       {post}
+      <EditModal visible={isModalVisible} setVisible={setIsModalVisible} />
     </div>
   )
 }
