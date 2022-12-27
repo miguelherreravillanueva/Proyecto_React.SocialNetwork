@@ -8,13 +8,12 @@ const PostDetail = () => {
   const { _id } = useParams()
   const dispatch = useDispatch()
   const { post } = useSelector((state) => state.posts)
-  const navigate = useNavigate()
   
   useEffect(() => {
     dispatch(getPostById(_id))
   }, [])
   if (!post) {
-    return <p>Loading..</p>
+    return <p>Loading...</p>
 
   }
 
