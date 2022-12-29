@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { createComment } from '../../../features/comments/commentsSlice'
 import { reset } from '../../../features/posts/postsSlice'
-import { Button, Form, Input } from "antd";
 
 const AddComment = () => {
     const [formData, setFormData] = useState({
@@ -12,15 +11,10 @@ const AddComment = () => {
     })
     const { body } = formData
     const { isSuccess, msg, isError } = useSelector((state) => state.comments)
-    const [form] = Form.useForm();
     const dispatch = useDispatch()
     const navigate = useNavigate()
-    const onFinish = () => {
-        dispatch(createComment(formData))
-        form.resetFields();
-    }
-
-
+    
+    
     useEffect(() => {
         if (isSuccess) {
             notification.success({
@@ -39,11 +33,34 @@ const AddComment = () => {
         }
         dispatch(reset())
     }, [isSuccess, isError, msg])
-
+    
+    const onChange = (e) => {
+        setFormData((prevState) => ({
+            ...prevState,
+            [e.target.name]: e.target.value
+        }))
+    }
+    const onSubmit = (e) => {
+        e.preventDefault()
+        console.log(formData)
+        dispatch(createComment(formData))
+    }
 
     return (
-     <div>HOLA?</div>
-    )
-}
+        <div>
+        <form onSubmit={onSubmit}>
+            <h4>Comment something!</h4>
+                        
+            <input
+                type="text"
+                name="body"
+                value={body}
+                onChange={onChange} placeholder="Write something" />
+            <button type="submit">Publish</button>
+
+        </form>
+    </div>
+        )
+    }
 
 export default AddComment

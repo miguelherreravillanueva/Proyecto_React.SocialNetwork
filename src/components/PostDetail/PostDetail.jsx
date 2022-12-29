@@ -7,7 +7,7 @@ const PostDetail = () => {
   const { _id } = useParams()
   const dispatch = useDispatch()
   const { post } = useSelector((state) => state.posts)
-  
+
   useEffect(() => {
     dispatch(getPostById(_id))
   }, [])
@@ -21,7 +21,7 @@ const PostDetail = () => {
       <p>{post.userId?.name}</p>
       <p>{post.title}</p>
       <p>{post.body}</p>
-          </div>
+    </div>
   )
 }
 
