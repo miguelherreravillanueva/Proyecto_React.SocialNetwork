@@ -1,9 +1,22 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch } from 'react-redux';
+import { getComments } from '../../features/comments/commentsSlice';
+import AddComment from './AddComment/AddComment';
 
 const Comments = () => {
-  return (
-    <div>Comments</div>
-  )
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(getComments())
+    }, []);
+
+
+    return (
+        <div>
+            <AddComment />
+        </div>
+
+    )
 }
 
 export default Comments
