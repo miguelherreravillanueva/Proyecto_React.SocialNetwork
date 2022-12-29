@@ -2,12 +2,20 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 import commentsService from "./commentsService"
 
 const initialState = {
-    comments: {},
+    comments: [],
     isLoading: false,
     isError: false,
     isSuccess: false,
     msg: ""
 }
+
+export const getComments = createAsyncThunk("comments/getComments", async () => {
+    try {
+        return await commentsService.getComments();
+    } catch (error) {
+        console.error(error);
+    }
+});
 
 export const createComment = createAsyncThunk("/comments/createComment/", async (_id) => {
     try {
@@ -16,6 +24,14 @@ export const createComment = createAsyncThunk("/comments/createComment/", async 
         console.log(error)
     }
 })
+
+export const deleteComment = createAsyncThunk("comments/deleteCommentById", async (_id) => {
+    try {
+        return await commentsService.deleteComment(_id);
+    } catch (error) {
+        console.error(error);
+    }
+});
 
 export const commentsSlice = createSlice({
     name: "comments",
@@ -30,11 +46,21 @@ export const commentsSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder
+            .addCase(getComments.fulfilled, (state, action) => {
+
+                state.comments = action.payload;
+
+            })
             .addCase(createComment.fulfilled, (state, action) => {
                 state.comments = [action.payload.post, ...state.posts]
                 state.isSuccess = true
                 state.msg = action.payload.msg
-            });
+            })
+            .addCase(deleteComment.fulfilled, (state, action) => {
+                state.comments = state.comments.filter(
+                    (comment) => comment._id !== +action.payload._id
+                );
+            })
     }
 })
 
