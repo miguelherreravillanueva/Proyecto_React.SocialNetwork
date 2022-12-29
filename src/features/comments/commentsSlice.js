@@ -3,6 +3,7 @@ import commentsService from "./commentsService"
 
 const initialState = {
     comments: [],
+    comment:{},
     isLoading: false,
     isError: false,
     isSuccess: false,
@@ -33,6 +34,15 @@ export const deleteComment = createAsyncThunk("comments/deleteCommentById", asyn
     }
 });
 
+export const updateComment = createAsyncThunk("comments/updateCommentById", async (_id, comment) => {
+    try {
+        return await commentsService.updateComment(_id, comment);
+    } catch (error) {
+        console.error(error);
+    }
+});
+
+
 export const commentsSlice = createSlice({
     name: "comments",
     initialState,
@@ -47,12 +57,11 @@ export const commentsSlice = createSlice({
     extraReducers: (builder) => {
         builder
             .addCase(getComments.fulfilled, (state, action) => {
-
                 state.comments = action.payload;
 
             })
             .addCase(createComment.fulfilled, (state, action) => {
-                state.comments = [action.payload.post, ...state.posts]
+                state.comments = [action.payload.comment, ...state.comments]
                 state.isSuccess = true
                 state.msg = action.payload.msg
             })
@@ -61,6 +70,15 @@ export const commentsSlice = createSlice({
                     (comment) => comment._id !== +action.payload._id
                 );
             })
+            .addCase(updateComment.fulfilled, (state, action) => {
+                const comments = state.comments.map((comment) => {
+                    if (comment._id === action.payload.comment._id) {
+                        comment = action.payload.comment;
+                    }
+                    return comment;
+                });
+                state.comments = comments;
+            });
     }
 })
 

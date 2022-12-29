@@ -42,16 +42,7 @@ const AddComment = () => {
 
 
     return (
-        <Form onFinish={onFinish} form={form}>
-            <Form.Item label="" name="comment">
-                <Input placeholder="Write your comment" />
-            </Form.Item>
-            <Form.Item>
-                <Button type="primary" htmlType="submit">
-                    Submit
-                </Button>
-            </Form.Item>
-        </Form>
+     <div>HOLA?</div>
     )
 }
 

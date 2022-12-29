@@ -18,17 +18,25 @@ const createComment = async (_id) => {
 }
 
 const deleteComment = async (_id) => {
-
     const res = await axios.delete(API_URL + "/comments/" + _id);
-    
     return res.data;
-    
-    };
+};
+
+const updateComment = async (comment) => {
+    const user = JSON.parse(localStorage.getItem("user"));
+    const res = await axios.put(API_URL + "/comments/updateCommentById/" + comment._id, comment, {
+        headers: {
+            authorization: user?.token,
+        },
+    });
+    return res.data;
+}
 
 const commentsService = {
     getComments,
     createComment,
-    deleteComment
+    deleteComment,
+    updateComment
 }
 
 export default commentsService

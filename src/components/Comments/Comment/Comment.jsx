@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteComment } from '../../../features/comments/commentsSlice';
+import { deleteComment, getComments } from '../../../features/comments/commentsSlice';
 import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
+import EditModal2 from './EditModal2/EditModal2';
 
 const Comment = () => {
     const { comments } = useSelector((state) => state.comments);
@@ -9,7 +10,7 @@ const Comment = () => {
 
     const [isModalVisible, setIsModalVisible] = useState(false);
     const showModal = (_id) => {
-        console.log(_id)
+        dispatch(getComments(id));
         setIsModalVisible(true);
 
     };
@@ -24,7 +25,8 @@ const Comment = () => {
     });
 
     return (
-        <div>{comment}</div>
+        <div>{comment}
+        <EditModal2 visible={isModalVisible} setVisible={setIsModalVisible} /></div>
     )
 }
 
