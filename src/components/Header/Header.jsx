@@ -26,24 +26,22 @@ const Header = () => {
     return (
         <nav className='navbar'>
             <span>
-                <Link to="/">Home</Link>
+                <Link to="/"></Link>
             </span>
-            <div>
+            <div className='navbar2'>
+                <span>
                 <input onKeyUp={handleChange} placeholder="Search post" name='text' />
+
+                </span>
+                
                 {user?.user?.role === 'admin' ? <span><Link to="/admin">Admin</Link>
-                </span>:''}
+                </span> : ''}
                 {user ?
                     <>
-                        <span>
-                            <Link to="/" onClick={onLogout}>Logout</Link>
-                        </span>
-                        <span>
-                            <Link to="/profile">Profile</Link>
-                        </span>
-                        <span>
-                            <Link to="/addPost">Publish</Link>
-                        </span>
-                                            </>
+                        <Link to="/profile">Profile</Link>
+                        <Link to="/" onClick={onLogout}>Logout</Link>
+                        <Link to="/addPost">Publish</Link>
+                    </>
                     :
                     <>
                         <Link to="/login">Login</Link>

@@ -10,9 +10,9 @@ const Profile = () => {
     return <p>Loading...</p>
   }
   return (
-    <div>
-      <h3>My profile</h3>
-      <Form.Item label="Upload" valuePropName="fileList">
+    <div className='profile'>
+      <h3>{user.user.name}</h3>
+      <Form.Item label="" valuePropName="fileList">
         <Upload action="/upload.do" listType="picture-card">
           <div>
             <PlusOutlined />
@@ -26,8 +26,8 @@ const Profile = () => {
           </div>
         </Upload>
       </Form.Item>
-      <p>Name: {user.user.name}</p>
-      <p>Email: {user.user.email}</p>
+      
+      <p>{user.user.email}</p>
     </div>
   )
 }
