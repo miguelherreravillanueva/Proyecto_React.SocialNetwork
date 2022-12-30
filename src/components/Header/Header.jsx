@@ -25,30 +25,27 @@ const Header = () => {
     }
     return (
         <nav className='navbar'>
-            <span>
-                <Link to="/"></Link>
-            </span>
-            <div className='navbar2'>
-                <span>
-                <input onKeyUp={handleChange} placeholder="Search post" name='text' />
 
-                </span>
-                
-                {user?.user?.role === 'admin' ? <span><Link to="/admin">Admin</Link>
-                </span> : ''}
-                {user ?
-                    <>
-                        <Link to="/profile">Profile</Link>
-                        <Link to="/" onClick={onLogout}>Logout</Link>
-                        <Link to="/addPost">Publish</Link>
-                    </>
-                    :
-                    <>
-                        <Link to="/login">Login</Link>
-                        <Link to="/register">Sign in</Link>
-                    </>
-                }
-            </div>
+            <Link to="/">Home</Link>
+
+
+            {user?.user?.role === 'admin' ? <span><Link to="/admin">Admin</Link>
+            </span> : ''}
+
+            {user ?
+                <>
+                    <Link to="/profile">Profile</Link>
+                    <Link to="/addPost">Publish</Link>
+                    <Link to="/" onClick={onLogout}>Logout</Link>
+                </>
+                :
+                <>
+                    <Link to="/login">Login</Link>
+                    <Link to="/register">Sign in</Link>
+                </>
+            }
+            <input onKeyUp={handleChange} placeholder="Search post" name='text' />
+
         </nav>
     )
 }

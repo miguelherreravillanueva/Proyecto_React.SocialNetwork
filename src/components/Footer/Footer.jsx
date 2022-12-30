@@ -28,10 +28,7 @@ const Footer = () => {
             <span>
               Blog
             </span>
-            <span>
-              Join Gapnet
-            </span>
-          </div>
+                      </div>
           <div className="item">
             <h5>Contact</h5>
             <span>

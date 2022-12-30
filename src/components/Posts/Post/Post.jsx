@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { HeartOutlined, HeartFilled, DeleteOutlined, EditOutlined } from "@ant-design/icons";
 import { deletePostById, getPostById, dislike, like } from '../../../features/posts/postsSlice';
 import EditModal from './EditModal/EditModal';
+import "./Post.scss";
 
 const Post = () => {
   const { posts } = useSelector((state) => state.posts)
@@ -21,31 +22,35 @@ const Post = () => {
     return (
       <div className="post" key={post._id}>
         <Link to={"/post/" + post._id}>
-          <p>{post.userId.name} {post.title}: {post.body}</p>
+          <p>{post.userId.name}
+            <br />  {post.title}:
+            <br /> {post.body}</p>
         </Link>
-               <span className="wish"> {post.likes?.length} </span>
+        <span className="wish"> {post.likes?.length} </span>
+        <span>
+          {isAlreadyLiked ? (
+            <HeartFilled onClick={() => dispatch(dislike(post._id))} />
+          ) : (
+            <HeartOutlined onClick={() => dispatch(like(post._id))} />
+          )}
+        </span>
+        <span>
+          {user.user?._id === post.userId?._id ? (
+            <>
+              <DeleteOutlined onClick={() => dispatch(deletePostById(post._id))} />
+              <EditOutlined onClick={() => showModal(post._id)} />
+            </>
 
-        {isAlreadyLiked ? (
-          <HeartFilled onClick={() => dispatch(dislike(post._id))} />
-        ) : (
-          <HeartOutlined onClick={() => dispatch(like(post._id))} />
-        )}
-
-        {user.user?._id === post.userId?._id ? (
-          <>
-          <DeleteOutlined onClick={() => dispatch(deletePostById(post._id))} />
-          <EditOutlined onClick={() => showModal(post._id)} />
-          </>
-          
-        ) : ("")
-      }
+          ) : ("")
+          }
+        </span>
 
       </div>
     )
   })
 
   return (
-    <div>
+    <div className='post1'>
       {post}
       <EditModal visible={isModalVisible} setVisible={setIsModalVisible} />
     </div>

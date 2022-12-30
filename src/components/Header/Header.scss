@@ -2,51 +2,9 @@
 
 
 .navbar {
-
-    // transform: translateX(0px);
-    padding-right: 12px;
-    flex-direction: column;
-    box-sizing: border-box;
     display: flex;
-    padding-left: 12px;
-    padding-bottom: 20px;
-    background-color: rgb(var(--ig-primary-background));
-    padding-top: 8px;
-    width: var(--nav-narrow-width);
-    height: 10vh;
-    align-items: flex-start;
-    flex-direction: column;
-    flex-wrap: wrap;
-
-    .navbar2 {
-        justify-content: space-around;
-        padding-right: 12px;
-        flex-direction: column;
-        box-sizing: border-box;
-        display: flex;
-        padding-left: 12px;
-        padding-bottom: 20px;
-        background-color: rgb(var(--ig-primary-background));
-        padding-top: 8px;
-        width: var(--nav-narrow-width);
-        height: 10vh;
-        align-items: flex-start;
-        flex-direction: column;
-        flex-wrap: wrap;
-    }
-
-
-
-    // border-bottom: 1px $color-text solid;
-    // color: rgb(219, 224, 236);
-    // padding: 6px;
-    // cursor: pointer;
-    // font: 100% $font-text;
-    // color: $color-text;
-    // display: flex;
-    // margin: 2em;
-    // width: 90%;
-    // justify-content: space-between;
-    // align-items: baseline;
-    // z-index:99;
+    justify-content: space-around;
+    height: 8vh;
+    background-color: red;
+    align-items: center;
 }

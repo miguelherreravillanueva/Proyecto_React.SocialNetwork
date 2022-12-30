@@ -1,0 +1,21 @@
+.post{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: row;
+    margin: 10px;
+    margin-bottom: 10px;
+    gap: 10px;
+    border: 2px black solid;
+    background-color: aqua;
+}
+
+.post1{
+    border: 2px gold solid;
+}
+
+span{
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+}

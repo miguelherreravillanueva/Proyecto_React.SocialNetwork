@@ -9,14 +9,14 @@ a {
   .footer {
     font: 100% $font-text;
     color: $color-text;
-    margin: 0 200px 0 200px;
+    margin: 0 10vh 0 10vh;
 
     .top {
       display: flex;
       gap: 50px;
       
       .item {
-        margin-top: 30px;
+        margin-top: 10px;
         flex: 1;
         display: flex;
         flex-direction: column;
@@ -36,14 +36,12 @@ a {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-top: 50px;
+      margin-top: 10px;
+      justify-content: center;
+      padding: 10px;
       .left {
         display: flex;
         align-items: center;
-
-        .logo {
-          height: 1.5em;
-        }
 
         .copyright {
           margin-left: 20px;
@@ -51,11 +49,7 @@ a {
           color: $color-text;
         }
       }
-      .right {
-        img {
-          height: 50px;
-        }
-      }
+      
     }
   }
 }
