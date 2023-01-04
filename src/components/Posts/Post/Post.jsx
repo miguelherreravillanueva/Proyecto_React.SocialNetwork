@@ -22,7 +22,9 @@ const Post = () => {
     return (
       <div className="post" key={post._id}>
         <Link to={"/post/" + post._id}>
-          <p>{post.userId.name}
+          <p><strong>
+            {post.userId.name}
+            </strong>
             <br />
             <br />
             <i>{post.body}</i> </p>

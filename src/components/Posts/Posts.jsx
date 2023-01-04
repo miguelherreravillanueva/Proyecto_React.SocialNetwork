@@ -22,10 +22,7 @@ const Posts = () => {
 
   return (
     <div className='posts'>
-      <h3>
-        What's going on...
-      </h3>
-      <Post />
+        <Post />
     </div>
   )
 }

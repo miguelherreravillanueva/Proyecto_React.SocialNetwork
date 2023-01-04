@@ -2,6 +2,9 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { getPostById } from '../../features/posts/postsSlice'
+import { Card } from 'antd';
+import { CommentOutlined } from "@ant-design/icons"
+import "./PostDetail.scss"
 
 const PostDetail = () => {
   const { _id } = useParams()
@@ -17,10 +20,25 @@ const PostDetail = () => {
   }
 
   return (
-    <div key={post._id}>
-      <p>{post.userId?.name}</p>
-      <p>{post.title}</p>
-      <p>{post.body}</p>
+    <div className='postDetail-container' key={post._id}>
+      <p></p>
+
+      <Card
+        title={post.userId?.name}
+        bordered={false}
+        style={{
+          width: 300,
+          border: "1px solid gray",
+          background: "transparent",
+          color: "#47311d",
+        }}
+      >
+        <CommentOutlined />
+        <p>{post.title}
+        </p>
+        <p>{post.body}</p>
+
+      </Card>
     </div>
   )
 }

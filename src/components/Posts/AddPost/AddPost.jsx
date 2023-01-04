@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { reset, createPost } from "../../../features/posts/postsSlice"
 import { notification } from "antd";
 import { useNavigate } from 'react-router-dom'
+import { Button } from "antd";
 
 
 const AddPost = () => {
@@ -49,14 +50,9 @@ const AddPost = () => {
     }
 
     return (
-        <div>
+        <div className='addPost-container'>
             <form onSubmit={onSubmit}>
                 <h4>Say something!</h4>
-                <input
-                    type="file"
-                    name='file'
-                    value={image}
-                    onChange={onChange} />
                 <input
                     type="text"
                     name="title"
@@ -67,7 +63,13 @@ const AddPost = () => {
                     name="body"
                     value={body}
                     onChange={onChange} placeholder="Write something" />
-                <button type="submit">Publish</button>
+                <Button type="primary" htmlType="submit" style={{
+                    border: "2px solid gray",
+                    background: "transparent",
+                    color: "#47311d",
+                }}>
+                    Publish
+                </Button>
 
             </form>
         </div>

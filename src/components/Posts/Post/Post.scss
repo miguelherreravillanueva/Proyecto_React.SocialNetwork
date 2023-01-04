@@ -1,18 +1,14 @@
 .post{
     display: flex;
-    justify-content: left;
+    justify-content: center;
     text-align: left;
     flex-direction: row;
     margin: 10px;
     margin-bottom: 10px;
     gap: 10px;
-    border: 2px black solid;
-    background-color: aqua;
+ 
 }
 
-.post1{
-    border: 2px gold solid;
-}
 
 span{
     display: flex;
