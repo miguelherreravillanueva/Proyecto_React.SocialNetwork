@@ -23,8 +23,9 @@ const Post = () => {
       <div className="post" key={post._id}>
         <Link to={"/post/" + post._id}>
           <p>{post.userId.name}
-            <br />  {post.title}:
-            <br /> {post.body}</p>
+            <br />
+            <br />
+            <i>{post.body}</i> </p>
         </Link>
         <span className="wish"> {post.likes?.length} </span>
         <span>

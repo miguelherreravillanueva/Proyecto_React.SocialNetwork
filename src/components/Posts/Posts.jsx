@@ -22,9 +22,9 @@ const Posts = () => {
 
   return (
     <div className='posts'>
-      <h2>
-        Feeds
-      </h2>
+      <h3>
+        What's going on...
+      </h3>
       <Post />
     </div>
   )

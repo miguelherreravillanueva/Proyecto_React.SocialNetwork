@@ -2,7 +2,8 @@ import React, { useEffect } from 'react'
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { register, reset } from '../../features/auth/authSlice'
-import { notification } from "antd";
+import { notification, Button } from "antd";
+import "./Register.scss";
 
 const Register = () => {
     const [formData, setFormData] = useState({
@@ -50,14 +51,26 @@ const Register = () => {
     }
 
     return (
-        <form onSubmit={onSubmit}>
-            <h3>Sign in</h3>
-            <input type="text" name="name" value={name} onChange={onChange} placeholder="Name" />
-            <input type="email" name="email" value={email} onChange={onChange} placeholder="Email" />
-            <input type="password" name="password" value={password} onChange={onChange} placeholder="Password" />
-            <input type="password" name="password2" value={password2} onChange={onChange} placeholder="Repite password" />
-            <button type="submit">Sign</button>
-        </form>
+        <div className="register-form">
+            <form onSubmit={onSubmit}>
+                <h3>Sign in</h3>
+                <input type="text" name="name" value={name} onChange={onChange} placeholder="Name" />
+                <input type="email" name="email" value={email} onChange={onChange} placeholder="Email" />
+                <input type="password" name="password" value={password} onChange={onChange} placeholder="Password" />
+                <input type="password" name="password2" value={password2} onChange={onChange} placeholder="Repite password" />
+                <Button type="primary" htmlType="submit" style={{
+
+                    border: "2px solid gray",
+                    background: "transparent",
+                    color: "#47311d",
+                }}>
+                    Sign in
+                </Button>
+            </form>
+        </div>
+
+
+
     )
 }
 

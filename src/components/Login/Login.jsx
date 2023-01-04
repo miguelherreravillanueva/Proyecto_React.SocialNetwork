@@ -5,13 +5,14 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import "./Login.scss";
 import { login, reset } from '../../features/auth/authSlice'
+import { Button } from "antd";
 
 const Login = () => {
     const [formData, setFormData] = useState({
         email: "",
         password: "",
     })
-    
+
     const { email, password } = formData
     const { isError, msg, isSuccess } = useSelector((state) => state.auth)
     const dispatch = useDispatch()
@@ -52,6 +53,7 @@ const Login = () => {
     return (
         <div className="container-login">
             <form onSubmit={onSubmit}>
+                <h3>Log in</h3>
                 <input
                     type="email"
                     name="email"
@@ -63,7 +65,15 @@ const Login = () => {
                     name='password'
                     value={password}
                     onChange={onChange} placeholder="Password" />
-                <button type='submit'>Login</button>
+
+                <Button type="primary" htmlType="submit" style={{
+
+                    border: "2px solid gray",
+                    background: "transparent",
+                    color: "#47311d",
+                }}>
+                    Login
+                </Button>
             </form>
 
         </div>
