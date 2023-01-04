@@ -1,7 +1,8 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { Spin, Card } from 'antd';
-import { PhoneOutlined, MailOutlined, TagOutlined } from "@ant-design/icons";
+import { MailOutlined } from "@ant-design/icons"
+import "./Profile.scss"
 
 
 const Profile = () => {

@@ -4,8 +4,13 @@ a {
   all: unset;
   cursor: pointer;
 }
+
 .footerFull {
   background-color: $background-2;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+
   .footer {
     font: 100% $font-text;
     color: $color-text;
@@ -14,7 +19,7 @@ a {
     .top {
       display: flex;
       gap: 50px;
-      
+
       .item {
         margin-top: 10px;
         flex: 1;
@@ -39,6 +44,7 @@ a {
       margin-top: 10px;
       justify-content: center;
       padding: 10px;
+
       .left {
         display: flex;
         align-items: center;
@@ -49,7 +55,7 @@ a {
           color: $color-text;
         }
       }
-      
+
     }
   }
 }
