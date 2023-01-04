@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { Spin, Card } from 'antd';
-import { MailOutlined } from "@ant-design/icons"
+import { MailOutlined, UserOutlined } from "@ant-design/icons"
 import "./Profile.scss"
 
 
@@ -27,12 +27,10 @@ const Profile = () => {
               background: "transparent",
               color: "#47311d",
             }}
-          >
+            >
+            <UserOutlined/>
             <p><MailOutlined /> {user.user.email}</p>
             <br />
-            
-            {/* <img src={images[selectedImage]} alt="" width={250} /> */}
-
           </Card>
         </div>
       }

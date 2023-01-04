@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import { logout } from '../../features/auth/authSlice'
+import { LoginOutlined, LogoutOutlined, UserOutlined, HomeOutlined, UserAddOutlined } from "@ant-design/icons"
 import "./Header.scss";
 
 
@@ -26,7 +27,7 @@ const Header = () => {
     return (
         <nav className='navbar'>
 
-            <Link to="/">Home</Link>
+            <Link to="/"><HomeOutlined /></Link>
 
 
             {user?.user?.role === 'admin' ? <span><Link to="/admin">Admin</Link>
@@ -34,14 +35,13 @@ const Header = () => {
 
             {user ?
                 <>
-                    <Link to="/profile">Profile</Link>
-                    <Link to="/addPost">Publish</Link>
-                    <Link to="/" onClick={onLogout}>Logout</Link>
+                    <Link to="/profile"><UserOutlined /></Link>
+                    <Link to="/" onClick={onLogout}>  <LogoutOutlined /></Link>
                 </>
                 :
                 <>
-                    <Link to="/login">Login</Link>
-                    <Link to="/register">Sign in</Link>
+                    <Link to="/login"><LoginOutlined /></Link>
+                    <Link to="/register"><UserAddOutlined /></Link>
                 </>
             }
             <input onKeyUp={handleChange} placeholder="Search post" name='text' />
