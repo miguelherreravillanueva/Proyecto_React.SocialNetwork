@@ -25,14 +25,12 @@ const Post = () => {
     const isAlreadyLiked = post.likes?.includes(user?.user._id);
     return (
       <div className="post" key={post._id}>
-        <div>
         <img src={images[selectedImage]} alt="" width={100} height={100} />
-        </div>
         <br />
         <Link to={"/post/" + post._id}>
           <p><strong>
             {post.userId.name}
-            </strong>
+          </strong>
             <br />
             <br />
             <i>{post.body}</i> </p>
