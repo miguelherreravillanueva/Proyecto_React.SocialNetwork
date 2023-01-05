@@ -1,18 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { Spin, Card } from 'antd';
-import { MailOutlined, UserOutlined } from "@ant-design/icons"
+import { MailOutlined, UserOutlined, EditOutlined, VideoCameraOutlined, TrophyOutlined, UsergroupDeleteOutlined, SettingOutlined, FileImageOutlined } from "@ant-design/icons"
 import "./Profile.scss"
 
 
 const Profile = () => {
   const { user } = useSelector((state) => state.auth)
+  const [selectedImage] = useState(0);
+  const images = [
+    "https://static.vecteezy.com/system/resources/previews/007/226/475/non_2x/user-account-circle-glyph-color-icon-user-profile-picture-userpic-silhouette-symbol-on-white-background-with-no-outline-negative-space-illustration-vector.jpg",
+  ];
 
   if (!user) {
     return <p>Loading...</p>
   }
   return (
     <div className="container-profile">
+      <br />
 
       {!user ?
         <Spin size="large" /> :
@@ -27,10 +32,20 @@ const Profile = () => {
               background: "transparent",
               color: "#47311d",
             }}
-            >
-            <UserOutlined/>
+          >
+            <img src={images[selectedImage]} alt="" width={100} height={100} />
+            <br />
+            <p>Change your picture</p>
+            <UserOutlined /> <VideoCameraOutlined /> <FileImageOutlined /> <TrophyOutlined /> <SettingOutlined />
+            <br />
             <p><MailOutlined /> {user.user.email}</p>
             <br />
+            <p>
+              <UsergroupDeleteOutlined /> Friends
+            </p>
+            <p>
+              <EditOutlined /> Edit your profile
+            </p>
           </Card>
         </div>
       }
