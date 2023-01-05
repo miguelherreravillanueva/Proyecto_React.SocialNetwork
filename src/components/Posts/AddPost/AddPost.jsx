@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { reset, createPost } from "../../../features/posts/postsSlice"
 import { notification } from "antd";
+import { HistoryOutlined, VideoCameraOutlined } from "@ant-design/icons"
 import { useNavigate } from 'react-router-dom'
 import { Button } from "antd";
 import "./AddPost.scss"
@@ -50,22 +51,21 @@ const AddPost = () => {
         dispatch(createPost(formData))
     }
 
+   
     return (
         <div className='addPost-container'>
-            <h4>What's on your mind?</h4>
+            <span>
+                <HistoryOutlined /> Stories |
+                <VideoCameraOutlined /> Reels
+            </span>
             <form onSubmit={onSubmit}>
-                <input
-                    type="text"
-                    name="title"
-                    value={title}
-                    onChange={onChange} placeholder="Title" />
                 <input
                     type="text"
                     name="body"
                     value={body}
-                    onChange={onChange} placeholder="Write something" />
+                    onChange={onChange} placeholder="What's on your mind?" />
                 <Button type="primary" htmlType="submit" style={{
-                    border: "2px solid gray",
+                    border: "2px solid lightGray",
                     background: "transparent",
                     color: "#47311d",
                 }}>

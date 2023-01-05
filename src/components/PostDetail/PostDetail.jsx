@@ -1,15 +1,17 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
-import { getPostById } from '../../features/posts/postsSlice'
+import { dislike, getPostById, like } from '../../features/posts/postsSlice'
 import { Card } from 'antd';
-import { CommentOutlined } from "@ant-design/icons"
+import { CommentOutlined, HeartOutlined, HeartFilled } from "@ant-design/icons"
 import "./PostDetail.scss"
 
 const PostDetail = () => {
   const { _id } = useParams()
   const dispatch = useDispatch()
   const { post } = useSelector((state) => state.posts)
+  const { user } = useSelector((state) => state.auth);
+
 
   useEffect(() => {
     dispatch(getPostById(_id))
@@ -19,6 +21,7 @@ const PostDetail = () => {
 
   }
 
+  const isAlreadyLiked = post.likes?.includes(user?.user._id);
   return (
     <div className='postDetail-container' key={post._id}>
       <p></p>
@@ -28,15 +31,20 @@ const PostDetail = () => {
         bordered={false}
         style={{
           width: 300,
-          border: "1px solid gray",
+          border: "1px solid lightGray",
           background: "transparent",
           color: "#47311d",
         }}
       >
-        <CommentOutlined />
-        <p>{post.title}
-        </p>
-        <p>{post.body}</p>
+        <p><CommentOutlined /> {post.body}</p>
+        <span className="wish"> {post.likes?.length}</span>
+        <span>
+          {isAlreadyLiked ? (
+            <HeartFilled onClick={() => dispatch(dislike(post._id))} />
+          ) : (
+            <HeartOutlined onClick={() => dispatch(like(post._id))} />
+          )}
+        </span>
 
       </Card>
     </div>

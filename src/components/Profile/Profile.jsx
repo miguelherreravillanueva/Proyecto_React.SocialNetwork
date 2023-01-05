@@ -28,7 +28,7 @@ const Profile = () => {
             bordered={false}
             style={{
               width: 300,
-              border: "1px solid gray",
+              border: "1px solid lightlightGray",
               background: "transparent",
               color: "#47311d",
             }}
