@@ -5,6 +5,7 @@ import { reset, createPost } from "../../../features/posts/postsSlice"
 import { notification } from "antd";
 import { useNavigate } from 'react-router-dom'
 import { Button } from "antd";
+import "./AddPost.scss"
 
 
 const AddPost = () => {
@@ -51,8 +52,8 @@ const AddPost = () => {
 
     return (
         <div className='addPost-container'>
+            <h4>What's on your mind?</h4>
             <form onSubmit={onSubmit}>
-                <h4>Say something!</h4>
                 <input
                     type="text"
                     name="title"

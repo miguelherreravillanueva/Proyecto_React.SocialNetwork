@@ -35,16 +35,17 @@ const Profile = () => {
           >
             <img src={images[selectedImage]} alt="" width={100} height={100} />
             <br />
-            <p>Change your picture</p>
+            <p>Edit picture</p>
+            <hr />
             <UserOutlined /> <VideoCameraOutlined /> <FileImageOutlined /> <TrophyOutlined /> <SettingOutlined />
             <br />
-            <p><MailOutlined /> {user.user.email}</p>
             <br />
+            <p><MailOutlined /> {user.user.email}</p>
             <p>
               <UsergroupDeleteOutlined /> Friends
             </p>
             <p>
-              <EditOutlined /> Edit your profile
+              <EditOutlined /> Edit profile
             </p>
           </Card>
         </div>

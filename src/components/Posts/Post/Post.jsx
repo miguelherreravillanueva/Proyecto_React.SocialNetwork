@@ -11,6 +11,10 @@ const Post = () => {
   const { user } = useSelector((state) => state.auth);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const dispatch = useDispatch();
+  const [selectedImage] = useState(0);
+  const images = [
+    "https://img1.freepng.es/20180326/ehw/kisspng-rikord-island-price-furniture-business-polaroid-5ab92ef5e00042.0205436215220856219175.jpg",
+  ];
 
   const showModal = (_id) => {
     dispatch(getPostById(_id));
@@ -21,6 +25,8 @@ const Post = () => {
     const isAlreadyLiked = post.likes?.includes(user?.user._id);
     return (
       <div className="post" key={post._id}>
+        <img src={images[selectedImage]} alt="" width={100} height={100} />
+        <br />
         <Link to={"/post/" + post._id}>
           <p><strong>
             {post.userId.name}
