@@ -5,6 +5,7 @@ import { HeartOutlined, HeartFilled, DeleteOutlined, EditOutlined } from "@ant-d
 import { deletePostById, getPostById, dislike, like } from '../../../features/posts/postsSlice';
 import EditModal from './EditModal/EditModal';
 import "./Post.scss";
+import AddComment from '../../PostDetail/AddComment/AddComment';
 
 const Post = () => {
   const { posts } = useSelector((state) => state.posts)
@@ -24,37 +25,42 @@ const Post = () => {
   const post = posts?.map((post) => {
     const isAlreadyLiked = post.likes?.includes(user?.user._id);
     return (
-      <div className="post" key={post._id}>
-        <img src={images[selectedImage]} alt="" width={100} height={100} />
-        <br />
-        <Link to={"/post/" + post._id}>
-          <p><strong>
-            {post.userId.name}
-          </strong>
-            <br />
-            <br />
-            <i>{post.body}</i> </p>
-        </Link>
-        <span className="wish"> {post.likes?.length} </span>
-        <span>
-          {isAlreadyLiked ? (
-            <HeartFilled onClick={() => dispatch(dislike(post._id))} />
-          ) : (
-            <HeartOutlined onClick={() => dispatch(like(post._id))} />
-          )}
-        </span>
-        <span>
-          {user.user?._id === post.userId?._id ? (
-            <>
-              <DeleteOutlined onClick={() => dispatch(deletePostById(post._id))} />
-              <EditOutlined onClick={() => showModal(post._id)} />
-            </>
+      <>
+        <div className="post" key={post._id}>
+          <img src={images[selectedImage]} alt="" width={100} height={100} />
+          <br />
+          <Link to={"/post/" + post._id}>
+            <p><strong>
+              {post.userId.name}
+            </strong>
+              <br />
+              <br />
+              <i>{post.body}</i> </p>
+          </Link>
+          <span className="wish"> {post.likes?.length} </span>
+          <span>
+            {isAlreadyLiked ? (
+              <HeartFilled onClick={() => dispatch(dislike(post._id))} />
+            ) : (
+              <HeartOutlined onClick={() => dispatch(like(post._id))} />
+            )}
+          </span>
+          <span>
+            {user.user?._id === post.userId?._id ? (
+              <>
+                <DeleteOutlined onClick={() => dispatch(deletePostById(post._id))} />
+                <EditOutlined onClick={() => showModal(post._id)} />
+              </>
 
-          ) : ("")
-          }
-        </span>
+            ) : ("")
+            }
+          </span>
 
-      </div>
+        </div>
+        <div className='addComment'>
+          <AddComment />
+        </div>
+      </>
     )
   })
 

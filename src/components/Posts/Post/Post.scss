@@ -1,4 +1,4 @@
-.post{
+.post {
     display: flex;
     justify-content: center;
     text-align: left;
@@ -7,11 +7,18 @@
     margin-bottom: 10px;
     gap: 10px;
     width: 100%;
- 
+
 }
 
-span{
+span {
     display: flex;
     align-items: flex-end;
     gap: 10px;
+}
+
+.addComment {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    margin-top: 10px;
 }

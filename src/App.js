@@ -15,8 +15,7 @@ import Posts from './components/Posts/Posts';
 import PrivateZone from './guards/PrivateZone';
 import AdminZone from './guards/AdminZone';
 import NotFound from './components/NotFound/NotFound';
-import Comments from './components/Comments/Comments';
-import AddComment from './components/Comments/AddComment/AddComment';
+import AddComment from './components/PostDetail/AddComment/AddComment';
 
 function App() {
   return (
@@ -35,7 +34,6 @@ function App() {
               </PrivateZone>
             }
           />
-          <Route path="/comments/" element={<Comments />} />
           <Route path="/addComment" element={<AddComment />} />
           <Route path="/post/:_id" element={<PostDetail />} />
           <Route path="/posts/" element={<Posts />} />

@@ -11,11 +11,9 @@ import "./AddPost.scss"
 
 const AddPost = () => {
     const [formData, setFormData] = useState({
-        title: "",
         body: "",
-        image: ""
     })
-    const { title, body, image } = formData
+    const { body } = formData
     const { isSuccess, msg, isError } = useSelector((state) => state.posts)
     const dispatch = useDispatch()
     const navigate = useNavigate()
@@ -51,7 +49,7 @@ const AddPost = () => {
         dispatch(createPost(formData))
     }
 
-   
+
     return (
         <div className='addPost-container'>
             <span>
