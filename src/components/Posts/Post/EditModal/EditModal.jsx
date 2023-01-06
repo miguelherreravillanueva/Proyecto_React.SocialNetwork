@@ -28,14 +28,15 @@ const EditModal = ({ visible, setVisible }) => {
             footer={[]}
         >
             <Form onFinish={onFinish} form={form}>
-                <Form.Item label="Post title" name="title">
-                    <Input placeholder="Post title" />
-                </Form.Item>
-                <Form.Item label="Post body" name="body">
-                    <Input placeholder="Post body" />
+                <Form.Item name="body">
+                    <Input placeholder="Say something about it" />
                 </Form.Item>
                 <Form.Item>
-                    <Button type="primary" htmlType="submit">
+                    <Button type="primary" htmlType="submit" style={{
+                        border: "2px solid lightGray",
+                        background: "transparent",
+                        color: "#47311d",
+                    }}>
                         Submit
                     </Button>
                 </Form.Item>
