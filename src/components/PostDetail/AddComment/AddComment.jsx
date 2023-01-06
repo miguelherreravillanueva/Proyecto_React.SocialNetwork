@@ -56,7 +56,7 @@ const AddComment = () => {
                             },
                         ]}
                     >
-                        <div className="input-form">
+                        <div className="input-form1">
                             <Input
                                 className="input"
                                 name="comment"

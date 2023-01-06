@@ -1,5 +1,6 @@
-.input-form{
+.form-create-comment{
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    justify-content: flex-start;
+    flex-direction: row;
+    margin-top: 20px;
 }
