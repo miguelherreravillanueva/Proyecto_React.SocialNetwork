@@ -11,10 +11,7 @@ const Header = () => {
     const dispatch = useDispatch()
     const { user } = useSelector((state) => state.auth)
     const [text, setText] = useState("")
-    const [selectedImage] = useState(0);
-    const images = [
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShLAUtTplbtUI1TRzj_Q3yyCsUZ3839tkpCQ&usqp=CAU",
-    ];
+
 
     const handleChange = (e) => {
         setText(e.target.value)
@@ -31,8 +28,7 @@ const Header = () => {
     }
     return (
         <nav className='navbar'>
-            <img src={images[selectedImage]} alt="" width={50} height={50} />
-
+            GAPNET
             <Link to="/"><HomeOutlined /></Link>
 
             {user?.user?.role === 'admin' ? <span><Link to="/admin"><CrownOutlined /> Admin</Link>

@@ -4,18 +4,18 @@
   font-family: newYork;
 }
 
-
-
 $font-text: "NB International";
 $font-text-styled: "newYork";
 
-$color-text: #47311d;
+$color-text: white;
 
-$background-1: white;
-$background-2: #f2ece8;
-$background-3: #f3f0ee;
+$background:url(../src/assets/52841777-blanc-et-noir-moroccan-modèle-zellige-mosaïque-illustration-vectorielle.webp);
+$background-2: rgb(97, 187, 248);
 
 Body {
-  background: $background-1;
+  $background-position: center;
+  $background-size: cover;
+  $background-attachment: contain;
+  $background:url(../src/assets/52841777-blanc-et-noir-moroccan-modèle-zellige-mosaïque-illustration-vectorielle.webp);
 }
 
