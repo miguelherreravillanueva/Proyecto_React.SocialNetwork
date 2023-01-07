@@ -15,7 +15,7 @@ const NotFound = () => {
           background: "transparent",
           color: "#47311d",
         }}>
-          <Link to="/profile">Back Profile</Link>
+          <Link to="/">Back Home</Link>
         </Button>}
       />
     </div>

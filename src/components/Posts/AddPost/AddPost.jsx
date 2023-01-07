@@ -6,6 +6,7 @@ import { notification } from "antd";
 import { HistoryOutlined, VideoCameraOutlined } from "@ant-design/icons"
 import { useNavigate } from 'react-router-dom'
 import { Button } from "antd";
+import { Link } from "react-router-dom";
 import "./AddPost.scss"
 
 
@@ -53,8 +54,8 @@ const AddPost = () => {
     return (
         <div className='addPost-container'>
             <span>
-                <HistoryOutlined /> Stories |
-                <VideoCameraOutlined /> Reels
+                <HistoryOutlined /> <Link to="*">Stories</Link> |
+                <VideoCameraOutlined /> <Link to="*">Reels</Link>
             </span>
             <form onSubmit={onSubmit}>
                 <input

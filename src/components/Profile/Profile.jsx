@@ -43,10 +43,10 @@ const Profile = () => {
             <br />
             <p><MailOutlined /> {user.user.email}</p>
             <p>
-              <UsergroupDeleteOutlined /> Friends
+              <UsergroupDeleteOutlined /><Link to="*">Friends</Link>
             </p>
             <p>
-              <EditOutlined /> Edit profile
+              <EditOutlined /><Link to="*">Edit profile</Link>
             </p>
           </Card>
         </div>
