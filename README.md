@@ -189,18 +189,10 @@ This space is made to list my favourites Social Networks projects that I have ex
 <!-- PREVIEW -->
 ## Preview 
 
-- Home general overview
+- General overview gif
 
 <!-- ![foto](./src/components/image/form.png) -->
 
-
-- Products general overview
-
-<!-- ![foto](./src/components/image/linknews.png) -->
-
-- Product Single Page general overview
-
-<!-- ![foto](./src/components/image/linknews.png) -->
 
 
 
