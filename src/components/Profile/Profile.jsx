@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { Spin, Card } from 'antd';
 import { MailOutlined, UserOutlined, EditOutlined, VideoCameraOutlined, TrophyOutlined, UsergroupDeleteOutlined, SettingOutlined, FileImageOutlined } from "@ant-design/icons"
+import { Link } from "react-router-dom";
 import "./Profile.scss"
 
 
@@ -28,14 +29,14 @@ const Profile = () => {
             bordered={false}
             style={{
               width: 300,
-              border: "1px solid lightlightGray",
+              border: "1px solid lightGray",
               background: "transparent",
               color: "#47311d",
             }}
           >
             <img src={images[selectedImage]} alt="" width={100} height={100} />
             <br />
-            <p>Edit picture</p>
+            <p><Link to="*">Edit picture</Link></p>
             <hr />
             <UserOutlined /> <VideoCameraOutlined /> <FileImageOutlined /> <TrophyOutlined /> <SettingOutlined />
             <br />

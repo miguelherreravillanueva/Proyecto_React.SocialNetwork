@@ -64,7 +64,6 @@ const Register = () => {
                 <input type="password" name="password" value={password} onChange={onChange} placeholder="Password" />
                 <input type="password" name="password2" value={password2} onChange={onChange} placeholder="Repite password" />
                 <Button type="primary" htmlType="submit" style={{
-
                     border: "2px solid lightGray",
                     background: "transparent",
                     color: "#47311d",

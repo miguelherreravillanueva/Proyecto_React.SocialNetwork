@@ -65,9 +65,7 @@ const Login = () => {
                     name='password'
                     value={password}
                     onChange={onChange} placeholder="Password" />
-
                 <Button type="primary" htmlType="submit" style={{
-
                     border: "2px solid lightGray",
                     background: "transparent",
                     color: "#47311d",
