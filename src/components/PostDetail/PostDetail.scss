@@ -1,9 +1,12 @@
+@import "../../App.scss";
+
 .postDetail-container{
     display: flex;
     justify-content: center;
     margin-bottom: 15px;
     margin-top: 50px;
     align-content: center;
+    font: $font-text;
 }
 
 .wish{

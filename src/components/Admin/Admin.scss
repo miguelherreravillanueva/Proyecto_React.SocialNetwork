@@ -1,10 +1,13 @@
 @import "../../App.scss";
 
-.notFound{
+.admin{
     display: flex;
     justify-content: center;
     margin-bottom: 15px;
     margin-top: 20px;
     align-content: center;
-    font: $font-text;
+    flex-direction: column;
+    text-align: center;
+    font: 100% $font-text;
+
 }
