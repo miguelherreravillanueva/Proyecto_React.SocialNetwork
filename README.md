@@ -68,12 +68,11 @@ In this project, a social network is developed where users will register, log in
 <views>
  
   <ol>
-  If logged:
     <li>Home</a></li>
     <li>Admin</a></li>
     <li>Profile</a></li>
     <li>Log out</a></li>
-        /
+        ...
     <li>Register</a></li>
     <li>Log in</a></li>
   </ol>
