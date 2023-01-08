@@ -27,7 +27,7 @@ const Post = () => {
     return (
       <>
         <div className="post" key={post._id}>
-          <img src={images[selectedImage]} alt="" width={100} height={100} />
+          <img src={images[selectedImage]} alt="" width={400} height={200} />
           <br />
           <Link to={"/post/" + post._id}>
             <p><strong>
