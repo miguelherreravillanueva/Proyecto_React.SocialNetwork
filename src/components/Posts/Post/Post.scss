@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     text-align: left;
-    flex-direction: row;
+    flex-direction: column;
     margin: 10px;
     margin-bottom: 10px;
     gap: 10px;
@@ -24,4 +24,10 @@ span {
     flex-direction: row;
     align-items: center;
     flex-wrap: wrap;
+}
+
+.botons{
+    display: flex;
+    align-content: center;
+    gap: 10px;
 }
