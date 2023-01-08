@@ -55,11 +55,11 @@ const Post = () => {
             ) : ("")
             }
           </span>
-
         </div>
         <div className='addComment'>
           <AddComment />
         </div>
+        <hr />
       </>
     )
   })
