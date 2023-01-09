@@ -18,9 +18,9 @@ export const getComments = createAsyncThunk("comments/getComments", async () => 
     }
 });
 
-export const createComment = createAsyncThunk("/comments/createComment/", async (_id) => {
+export const createComment = createAsyncThunk("/comments/createComment/", async (formData) => {
     try {
-        return await commentsService.createComment(_id)
+        return await commentsService.createComment(formData)
     } catch (error) {
         console.log(error)
     }

@@ -7,8 +7,7 @@ import { Form, Input, Button } from "antd";
 
 const AddComment = () => {
     const { _id } = useParams();
-    const { post } = useSelector((state) => state.posts);
-    const [setOpen] = useState(false);
+    // const [setOpen] = useState(false);
     const [formData, setFormData] = useState({
         comment: "",
         postId: _id,
@@ -34,7 +33,7 @@ const AddComment = () => {
     const onSubmit = (e) => {
         e.preventDefault();
         dispatch(createComment(formData));
-        setOpen(false);
+        // setOpen(false);
         clearState();
 
     };

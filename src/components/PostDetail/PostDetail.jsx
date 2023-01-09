@@ -5,12 +5,14 @@ import { dislike, getPostById, like } from '../../features/posts/postsSlice'
 import { Card } from 'antd';
 import { CommentOutlined, HeartOutlined, HeartFilled } from "@ant-design/icons"
 import "./PostDetail.scss"
+// import { useState } from 'react';
 
 const PostDetail = () => {
   const { _id } = useParams()
   const dispatch = useDispatch()
   const { post } = useSelector((state) => state.posts)
   const { user } = useSelector((state) => state.auth);
+  // const [visible, setVisible] = useState(false)
 
 
   useEffect(() => {
@@ -45,6 +47,7 @@ const PostDetail = () => {
             <HeartOutlined onClick={() => dispatch(like(post._id))} />
           )}
         </span>
+        {/* <button onclick={setVisible(true)}></button> */}
 
       </Card>
     </div>
