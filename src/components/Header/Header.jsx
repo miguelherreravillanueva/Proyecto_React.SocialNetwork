@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
-import { logout } from '../../features/auth/authSlice'
+import { logout } from "../../features/auth/AuthSlice"
 import { LoginOutlined, LogoutOutlined, UserOutlined, HomeOutlined, UserAddOutlined, CrownOutlined } from "@ant-design/icons"
 import "./Header.scss";
 

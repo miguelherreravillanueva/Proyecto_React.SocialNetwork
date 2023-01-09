@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { register, reset } from '../../features/auth/authSlice'
+import { register, reset } from "../../features/auth/AuthSlice"
 import { notification, Button } from "antd";
 import "./Register.scss";
 import { useNavigate } from 'react-router-dom';
