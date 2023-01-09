@@ -10,6 +10,7 @@ import AddComment from '../../PostDetail/AddComment/AddComment';
 const Post = () => {
   const { posts } = useSelector((state) => state.posts)
   const { user } = useSelector((state) => state.auth);
+  const { comment } = useSelector((state) => state.comments);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const dispatch = useDispatch();
   const [selectedImage] = useState(0);
@@ -36,6 +37,7 @@ const Post = () => {
               <br />
               <br />
               <i>{post.body}</i> </p>
+              {post.commentIds?.map((comment => <p>{comment.body}</p>))}
           </Link>
           <div className='botons'>
             <span className="wish"> {post.likes?.length} </span>
@@ -59,7 +61,7 @@ const Post = () => {
           </div>
         </div>
         <div className='addComment'>
-          <AddComment />
+          <AddComment _id={post._id} />
         </div>
         <hr />
       </>

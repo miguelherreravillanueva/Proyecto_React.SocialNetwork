@@ -8,8 +8,9 @@ const getComments = async () => {
 };
 
 const createComment = async (formData) => {
+    console.log(formData)
     const user = JSON.parse(localStorage.getItem("user"))
-    const res = await axios.post(API_URL + "/comments/createComment/" + formData, {
+    const res = await axios.post(API_URL + "/comments/createComment/" + formData.postId, formData, {
         headers: {
             authorization: user?.token
         }

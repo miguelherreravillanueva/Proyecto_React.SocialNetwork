@@ -1,23 +1,20 @@
-import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
-import { createComment, getComments } from '../../../features/comments/commentsSlice';
-import { getAll } from '../../../features/posts/postsSlice';
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux';
+import { createComment  } from '../../../features/comments/commentsSlice';
 import { Form, Input, Button } from "antd";
 
-const AddComment = () => {
-    const { _id } = useParams();
-    // const [setOpen] = useState(false);
+const AddComment = (props) => {
+    console.log(props._id)
     const [formData, setFormData] = useState({
-        comment: "",
-        postId: _id,
+        body: "",
+        postId:props._id,
     });
 
-    const { comment } = formData;
+    const { body } = formData;
 
     const clearState = () => {
         setFormData({
-            comment: "",
+            body: "",
             postId: "",
         });
     };
@@ -33,15 +30,9 @@ const AddComment = () => {
     const onSubmit = (e) => {
         e.preventDefault();
         dispatch(createComment(formData));
-        // setOpen(false);
         clearState();
 
     };
-
-    useEffect(() => {
-        getAll();
-        getComments();
-    }, []);
 
     return (
         <div className="form-create-comment">
@@ -58,8 +49,8 @@ const AddComment = () => {
                         <div className="input-form1">
                             <Input
                                 className="input"
-                                name="comment"
-                                value={comment}
+                                name="body"
+                                value={body}
                                 onChange={onChange}
                                 placeholder="Say something about it"
                             />
