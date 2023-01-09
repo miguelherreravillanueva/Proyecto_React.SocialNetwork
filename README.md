@@ -190,8 +190,7 @@ This space is made to list my favourites Social Networks projects that I have ex
 
 - General overview gif
 
-<!-- ![foto](./src/components/image/form.png) -->
-
+![foto](./src/assets/ace7bd21-76e2-41d6-a0e3-30cd413b56bb.gif)
 
 
 
