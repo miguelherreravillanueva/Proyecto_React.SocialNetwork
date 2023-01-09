@@ -36,8 +36,14 @@ const Post = () => {
             </strong>
               <br />
               <br />
-              <i>{post.body}</i> </p>
-              {post.commentIds?.map((comment => <p>{comment.body}</p>))}
+              <i>{post.body}</i>
+              <br />
+              <br />
+              Comments:
+              <i>
+                {post.commentIds?.map((comment => <p>{comment.body}</p>))}
+              </i>
+            </p>
           </Link>
           <div className='botons'>
             <span className="wish"> {post.likes?.length} </span>
