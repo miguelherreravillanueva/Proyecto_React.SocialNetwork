@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:3001";
+const API_URL = "https://proyecto-backend-red-social-blond.vercel.app";
 
 const getComments = async () => {
     const res = await axios.get(API_URL + "/comments");
@@ -8,8 +8,7 @@ const getComments = async () => {
 };
 
 const createComment = async (formData) => {
-    console.log(formData)
-    const user = JSON.parse(localStorage.getItem("user"))
+      const user = JSON.parse(localStorage.getItem("user"))
     const res = await axios.post(API_URL + "/comments/createComment/" + formData.postId, formData, {
         headers: {
             authorization: user?.token

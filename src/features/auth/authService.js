@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:3001";
+const API_URL = "https://proyecto-backend-red-social-blond.vercel.app";
 
 const register = async (userData) => {
     const res = await axios.post(API_URL + "/users/createUser", userData)

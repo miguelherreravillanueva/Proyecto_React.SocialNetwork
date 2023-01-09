@@ -46,7 +46,6 @@ const AddPost = () => {
     }
     const onSubmit = (e) => {
         e.preventDefault()
-        console.log(formData)
         dispatch(createPost(formData))
     }
 

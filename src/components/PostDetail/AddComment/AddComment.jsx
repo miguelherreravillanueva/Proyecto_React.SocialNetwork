@@ -1,13 +1,12 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
-import { createComment  } from '../../../features/comments/commentsSlice';
+import { createComment } from '../../../features/comments/commentsSlice';
 import { Form, Input, Button } from "antd";
 
 const AddComment = (props) => {
-    console.log(props._id)
     const [formData, setFormData] = useState({
         body: "",
-        postId:props._id,
+        postId: props._id,
     });
 
     const { body } = formData;
