@@ -9,7 +9,7 @@ const NotFound = () => {
       <Result
         status="404"
         title="404"
-        subTitle="Sorry, the page you visited does not exist."
+        subTitle="Sorry, we're building the page."
         extra={<Button type="primary" htmlType="submit" style={{
           border: "2px solid lightGray",
           background: "transparent",
