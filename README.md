@@ -137,8 +137,6 @@ _Below is an example of how you can instruct your audience on installing and set
 
 - [ ] Add a different style
 - [ ] Add Multer to upload images
-- [ ] Deploy with Vercel
-
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
