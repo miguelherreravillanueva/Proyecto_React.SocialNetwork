@@ -190,7 +190,7 @@ This project is under license of [Miguel Herrera](https://github.com/miguelherre
 <!-- CONTACT -->
 ## Contact 
   <p align="center">
-<a href = "mailto:mirkouda@gmail.com"><img align="center" alt="Rafa-Gmail" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gmail/gmail-original.svg">
+<a href = "mailto:mirkouda@gmail.com"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" target="_blank">
     <a href="https://www.linkedin.com/in/mherrevi/" target="_blank"><img align="center" alt="Rafa-Node" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"> 
 </p>
 
