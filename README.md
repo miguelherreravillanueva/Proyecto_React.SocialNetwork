@@ -84,10 +84,7 @@ In this project, a social network is developed where users will register, log in
 
 ### Built With
 
-* [![Node][Node.JS]][Node.JS-url]
-* [![React][React]][React-url]
-* [![MongoDB][MongoDB]][MongoDB-url]
-* [![SASS][SASS]][SASS-url]
+<img align="center" alt="Rafa-Node" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"> <img align="center" alt="Rafa-React" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg"> <img align="center" alt="Rafa-SASS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/sass/sass-original.svg"><img align="center" alt="Rafa-Mongodb" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original-wordmark.svg">
 
 
 
@@ -156,15 +153,6 @@ Don't forget to give the project a star! Thanks again!
 3. Commit your Changes (`git commit -m 'Add some YourName'`)
 4. Push to the Branch (`git push origin feature/YourName`)
 5. Open a Pull Request
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- LICENSE -->
-## License
-
-This project is under license of Miguel Herrera
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
